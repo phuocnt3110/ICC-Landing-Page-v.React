@@ -1,0 +1,192 @@
+/* Global styles */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Montserrat:wght@200;400;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f5f5f5;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Banner styles */
+.banner-container {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.banner-overlay .ant-btn {
+  font-size: 18px;
+  height: auto;
+  padding: 12px 24px;
+}
+
+/* Progress indicator */
+.progress-steps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #f0f2f5;
+  border-radius: 8px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+  color: #bbb;
+}
+
+.step .circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.step.active {
+  color: #00509f;
+}
+
+.step.active .circle {
+  background-color: #00509f;
+}
+
+.step.completed {
+  color: #52c41a;
+}
+
+.step.completed .circle {
+  background-color: #52c41a;
+}
+
+.divider {
+  flex: 1;
+  height: 2px;
+  background-color: #ddd;
+  margin: 0 15px;
+  position: relative;
+  top: -14px;
+}
+
+/* Card styles */
+.card-title {
+  color: #00509f;
+  font-size: 18px;
+  font-weight: 600;
+  border-bottom: 2px solid #00509f;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+/* Form styles */
+.form-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.required-field::after {
+  content: '*';
+  color: #ff4d4f;
+  margin-left: 4px;
+}
+
+/* Schedule table styles */
+.schedule-table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Loading styles */
+.loading-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 9999;
+  flex-direction: column;
+}
+
+.loading-text {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #00509f;
+}
+
+/* Footer styles */
+.footer {
+  margin-top: auto;
+  padding: 20px 0;
+  background-color: #001529;
+  color: white;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .banner-container {
+    height: 40vh;
+  }
+  
+  .banner-overlay .ant-btn {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+  
+  .progress-steps {
+    padding: 10px;
+  }
+  
+  .step .circle {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .form-section {
+    padding: 15px;
+  }
+}
