@@ -1,23 +1,26 @@
 /* Header styles */
 .app-header {
-    background-color: white;
-    padding: 0 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    height: 64px;
-  }
-  
-  .logo-container {
-    height: 100%;
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo {
-    height: 40px;
-    object-fit: contain;
-  }
+  background-color: white;
+  padding: 0 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* Thêm dòng này để căn giữa nội dung */
+  height: 64px;
+}
+
+.logo-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* Thêm dòng này để căn giữa logo */
+  width: 100%;  /* Thêm dòng này để container logo chiếm toàn bộ chiều rộng */
+}
+
+.logo {
+  height: 40px;
+  object-fit: contain;
+}
   
   /* Footer styles */
   .app-footer {

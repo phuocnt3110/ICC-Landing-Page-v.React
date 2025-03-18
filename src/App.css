@@ -14,17 +14,21 @@ body {
   min-height: 100vh;
 }
 
-/* Banner styles */
+/* Banner styles - thay đổi từ các giá trị hiện tại thành: */
+
 .banner-container {
   position: relative;
   width: 100%;
-  height: 50vh;
+  height: auto; /* Chuyển từ 50vh thành auto để theo tỷ lệ ảnh */
+  overflow: hidden;
 }
 
 .banner-image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto; /* Để hình ảnh giữ tỷ lệ gốc */
+  display: block; /* Tránh khoảng trắng dưới ảnh */
+  object-fit: contain; /* Đổi từ cover sang contain để hiển thị toàn bộ ảnh */
+  filter: none; /* Bỏ tất cả filter */
 }
 
 .banner-overlay {
@@ -36,13 +40,44 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3)); /* Gradient overlay nhẹ */
 }
 
+/* Banner overlay button - Điều chỉnh nút trên banner */
 .banner-overlay .ant-btn {
   font-size: 18px;
   height: auto;
   padding: 12px 24px;
+  z-index: 10;
+  background-color: #ffffff; /* Nền trắng */
+  color: #00509f; /* Màu chữ xanh ICANCONNECT */
+  font-weight: 600; /* In đậm chữ */
+  border: 2px solid #ffffff; /* Viền trắng đậm */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Thêm bóng đổ */
+  transition: all 0.3s ease;
+  position: relative; /* Đảm bảo vị trí cố định */
+}
+
+.banner-overlay .ant-btn:hover {
+  background-color: #00509f; /* Khi hover đổi nền xanh */
+  color: #ffffff; /* Chữ trắng khi hover */
+  transform: translateY(-2px); /* Hiệu ứng nút nổi lên */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Bóng đổ lớn hơn khi hover */
+  border-color: #00509f; /* Viền cùng màu nền */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Thêm bóng cho chữ */
+}
+
+/* Thêm outline khi hover để đảm bảo nút vẫn rõ ràng */
+.banner-overlay .ant-btn:hover::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  pointer-events: none;
 }
 
 /* Progress indicator */
